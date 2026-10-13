@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AWS Review Sentiment Intelligence</title>
+    <meta
+      name="description"
+      content="AWS review sentiment analysis project with animated frontend, ONNX model export, and GitHub Pages deployment. Built by interns at selfattention.in."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js"></script>
+  </head>
+  <body>
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+    <header class="topbar">
+      <div class="brand-wrap">
+        <div class="brand-mark">AI</div>
+        <div>
+          <p class="eyebrow">AWS NLP Suite</p>
+          <h2>Sentiment Intelligence</h2>
+        </div>
+      </div>
+      <span class="team-badge">Built by interns at selfattention.in</span>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <div class="hero-copy">
+          <span class="pill">ONNX-ready • GitHub Pages demo</span>
+          <h1>Predicting customer sentiment from AWS review narratives.</h1>
+          <p>
+            A modern machine learning project that transforms raw product feedback into a
+            deployable text-classification pipeline using TF-IDF features and an ONNX model.
+          </p>
+
+          <div class="cta-row">
+            <a href="#demo" class="primary-btn">Try the demo</a>
+            <a href="#insights" class="secondary-btn">View insights</a>
+          </div>
+
+          <div class="stats-grid">
+            <div class="stat-card">
+              <span class="label">Dataset</span>
+              <strong>459K+</strong>
+              <small>product reviews</small>
+            </div>
+            <div class="stat-card">
+              <span class="label">Model</span>
+              <strong>TF-IDF</strong>
+              <small>+ Logistic Regression</small>
+            </div>
+            <div class="stat-card">
+              <span class="label">Export</span>
+              <strong>ONNX</strong>
+              <small>web-ready deployment</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="orbit orbit-1"></div>
+          <div class="orbit orbit-2"></div>
+          <div class="pulse-panel">
+            <div class="mini-heading">Live model signal</div>
+            <div class="signal-row">
+              <span class="dot active"></span>
+              <span>Positive sentiment detected</span>
+            </div>
+            <div class="signal-row">
+              <span class="dot warning"></span>
+              <span>Market feedback is mostly balanced</span>
+            </div>
+            <div class="signal-row">
+              <span class="dot neutral"></span>
+              <span>Scalable for GitHub Pages deployment</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="insights" class="insights">
+        <div class="section-header">
+          <p class="eyebrow">Performance view</p>
+          <h3>Model intelligence summary</h3>
+        </div>
+
+        <div class="chart-card glass-panel">
+          <div class="chart-meta">
+            <div>
+              <span class="muted">Classification quality</span>
+              <h4>Core metrics</h4>
+            </div>
+            <span class="badge success">High confidence</span>
+          </div>
+          <canvas id="reviewChart"></canvas>
+        </div>
+      </section>
+
+      <section id="demo" class="demo-panel glass-panel">
+        <div class="section-header left">
+          <p class="eyebrow">Interactive demo</p>
+          <h3>Test the sentiment predictor</h3>
+        </div>
+
+        <div class="demo-layout">
+          <div class="textarea-wrap">
+            <label for="reviewInput">Customer review</label>
+            <textarea id="reviewInput" rows="7">This AWS service is extremely reliable and fast. Setup was easy and support was responsive.</textarea>
+            <div class="action-row">
+              <button id="predictBtn">Predict sentiment</button>
+              <button id="sampleBtn" class="ghost">Use sample review</button>
+            </div>
+          </div>
+
+          <div class="results-card">
+            <span class="muted">Prediction</span>
+            <div id="predictionBadge" class="prediction-badge positive">Positive</div>
+            <div class="confidence-wrap">
+              <div class="confidence-bar">
+                <span id="confidenceFill"></span>
+              </div>
+              <div class="confidence-labels">
+                <span>Confidence</span>
+                <strong id="confidenceText">88%</strong>
+              </div>
+            </div>
+            <p id="predictionSummary">
+              This review contains strong positive language tied to reliability, speed, and support quality.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Project by interns at selfattention.in · AWS Review NLP benchmark demo</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
